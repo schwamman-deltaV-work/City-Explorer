@@ -3,6 +3,7 @@
 
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 app.get('/location', (request, response) => {
   try {
@@ -27,6 +28,7 @@ app.get('/weather', (request, response) => {
   response.send(weatherData);
 });
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log('I know that you came to party baby, baby, baby, baby');
 });
