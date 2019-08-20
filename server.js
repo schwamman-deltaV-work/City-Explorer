@@ -29,7 +29,7 @@ function Weather(weatherData, i) {
   this.forecast = weatherData.daily.data[i].summary;
   this.time = convertTime();
   function convertTime() {
-    return new Date(weatherData.daily.data[i].time).toString().split(' ').slice(0, 4).join(' ');
+    return new Date(weatherData.daily.data[i].time * 1000).toString().split(' ').slice(0, 4).join(' ');
   }
 }
 
