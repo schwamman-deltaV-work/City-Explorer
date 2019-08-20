@@ -2,8 +2,11 @@
 'use strict';
 
 const express = require('express');
-const app = express();
+const cors = require('cors');
 require('dotenv').config();
+
+const app = express();
+app.use(cors());
 
 app.get('/location', (request, response) => {
   try {
